@@ -115,8 +115,8 @@ def main(opt):
     print(f"\nSaving model to ./weights/model_{dt_string}.pkl")
     torch.save(model.state_dict(),f'./weights/model_{dt_string}.pkl')
 
+# Use this for running in different scripts.
 def run(**kwargs):
-    # Usage: import train; train.run(data='coco128.yaml', imgsz=320, weights='yolov5m.pt')
     opt = parse_opt(True)
     for k, v in kwargs.items():
         setattr(opt, k, v)
